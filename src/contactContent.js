@@ -1,7 +1,5 @@
 function contactBody(){
-    let content = document.querySelector('#content');
-    let bottom = document.querySelector(".bottom");
-
+    
     //create body
     let body = document.createElement('div');
     body.id = 'body';
@@ -29,7 +27,15 @@ function contactBody(){
 
 
 
-    //insert body before footer
+    insertBody(body);
+
+}
+
+function insertBody(body){
+
+    let content = document.querySelector('#content');
+    let bottom = document.querySelector(".bottom");
+
     content.insertBefore(body, bottom);
 
 }

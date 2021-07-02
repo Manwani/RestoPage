@@ -1,35 +1,35 @@
 function homeLoad(){
-    let content = document.querySelector('#content');
+    let content = document.querySelector('#content');    
+    content.appendChild(createHeader());
+    content.appendChild(createBody());
+    content.appendChild(createFooter());
+}
 
-    //Create header
+function createHeader(){
     let head = document.createElement('div');
     head.id = 'head';
-
 
     let mainImage = document.createElement('img');
     mainImage.src = "imgs/chickenBros.png"
     head.appendChild(mainImage);
     
-    let home = document.createElement('button');
-    home.id = "homeButton";
-    home.style.color = 'red';
-    home.innerText = "Home";
-    head.appendChild(home);
+    head.appendChild(createButton("homeButton", "Home", "red"));
+    head.appendChild(createButton("menuButton", "Menu"));
+    head.appendChild(createButton("contactButton", "Contact"));
 
-    let menu = document.createElement('button');
-    menu.id = "menuButton";
-    menu.innerText = "Menu";
-    head.appendChild(menu);
+    return head;
+}
 
+function createButton(id, text, color){
+    let button = document.createElement("button");
+    button.id = id;
+    button.innerText = text;
+    button.style.color = color || "white";
 
-    let contact = document.createElement('button');
-    contact.id = "contactButton";
-    contact.innerText = "Contact";
-    head.appendChild(contact);
+    return button;
+}
 
-    content.appendChild(head);
-
-    //Create Body
+function createBody(){
     let body = document.createElement('div');
     body.id = 'body';
 
@@ -37,26 +37,25 @@ function homeLoad(){
     imageContainer.className = 'imageContainer';
     body.appendChild(imageContainer);
 
-
     let bodyContentImage = document.createElement('img');
-    bodyContentImage.src = "imgs/frontstore.jpg";
+    bodyContentImage.src = "imgs/frontstore.png";
     bodyContentImage.className = 'frontImage';
     imageContainer.appendChild(bodyContentImage);
 
     let overlay = document.createElement('div');
     overlay.className = 'overlay';
     
-
     let textOverlay = document.createElement('p');
     textOverlay.className = 'textOverlay';
     textOverlay.innerText = "Our Main Location in Albuquerque, New Mexico";
     overlay.appendChild(textOverlay);
-    
+
     imageContainer.appendChild(overlay);
 
-    content.appendChild(body);
+    return body;
+}
 
-    //Create Footer
+function createFooter(){
     let bottom = document.createElement('div');
     bottom.className = 'bottom';
 
@@ -64,44 +63,20 @@ function homeLoad(){
     bottomContent.innerText = "\"Los Pollos Hermanos, where something delicious is always cooking\"";
     bottom.appendChild(bottomContent);
 
-    content.appendChild(bottom);
-
-
+    return bottom;
 }
 
 function homeBody(){
+    let body = createBody();
+    insertBody(body);
+}
+
+
+function insertBody(body){
     let content = document.querySelector('#content');
     let bottom = document.querySelector(".bottom");
 
-    //create body
-    let body = document.createElement('div');
-    body.id = 'body';
-
-    //content for body
-    let imageContainer = document.createElement('div');
-    imageContainer.className = 'imageContainer';
-    body.appendChild(imageContainer);
-
-
-    let bodyContentImage = document.createElement('img');
-    bodyContentImage.src = "imgs/frontstore.jpg";
-    bodyContentImage.className = 'frontImage';
-    imageContainer.appendChild(bodyContentImage);
-
-    let overlay = document.createElement('div');
-    overlay.className = 'overlay';
-    
-
-    let textOverlay = document.createElement('p');
-    textOverlay.className = 'textOverlay';
-    textOverlay.innerText = "Our Main Location in Albuquerque, New Mexico";
-    overlay.appendChild(textOverlay);
-    
-    imageContainer.appendChild(overlay);
-
-    //insert body before footer
     content.insertBefore(body, bottom);
-
 }
 
 export {homeLoad, homeBody}
