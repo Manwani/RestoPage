@@ -6,11 +6,16 @@
   }
 
 
+#content{
+	display: flex;
+	flex-direction: column;
+}
+
+
+
 #head{
 	background-color:#050400;
 	text-align: center;
-	
-	
 }
 
 #head>img{
@@ -43,8 +48,7 @@
 
 
 #body{
-	margin:auto;
-	display: grid;
+	flex:1;
 	background-color: #0281cf;
 }
 
@@ -88,11 +92,12 @@
 }
 
 #bodyMenuImages{
-	margin:auto;
-	display: grid;
-	grid-template-columns: repeat(2,1fr);
-	justify-items: center;	 
+	flex:1;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
 	background-color: #0281cf;
+	column-gap:200px;
 }
 
 .menuImageContainer{
