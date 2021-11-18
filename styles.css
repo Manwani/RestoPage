@@ -99,11 +99,13 @@ body{
 
 #bodyMenuImages{
 	flex:1;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-evenly;
+	
+	display:grid;
+	grid-template-columns: repeat(2, 1fr);
+	justify-items: center;
+	
 	background-color: #0281cf;
-	column-gap:200px;
+	
 }
 
 .menuImageContainer{
