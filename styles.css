@@ -1,14 +1,20 @@
-@import "reset.css";
+
 
 @font-face {
 	font-family: 'pollos';
 	src: url("font/pollos.ttf");
   }
 
+body{
+	margin:0;
+	padding:0;
+}
+
 
 #content{
 	display: flex;
 	flex-direction: column;
+	
 }
 
 
@@ -135,7 +141,7 @@
 
 .bottom{
 	background-color:#050400;
-	width:100%;
+	
 }
 
 
