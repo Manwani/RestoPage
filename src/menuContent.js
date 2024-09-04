@@ -1,14 +1,23 @@
+import chicken1 from "./imgs/chicken1.png";
+import chicken2 from "./imgs/chicken2.png";
+import chicken3 from "./imgs/chicken3.png";
+import chicken4 from "./imgs/chicken4.png";
+import blueMeth from "./imgs/Bluemeth.png";
+import tuco from "./imgs/tuco.png";
+
+
+
 function menuBody(){
 
     let body = document.createElement('div');
     body.id = 'bodyMenuImages';
   
-    body.appendChild(createMenuItem("chicken1", "Some Fried Chicken"));
-    body.appendChild(createMenuItem("chicken2", "Some More Fried Chicken"));
-    body.appendChild(createMenuItem("chicken3", "Even More Fried Chicken"));
-    body.appendChild(createMenuItem("chicken4", "Can't Stop the Fried Chicken"));
-    body.appendChild(createMenuItem("Bluemeth","Secret Menu"));
-    body.appendChild(createMenuItem("tuco", "TIGHT TIGHT TIGHT"));
+    body.appendChild(createMenuItem(chicken1, "Some Fried Chicken"));
+    body.appendChild(createMenuItem(chicken2, "Some More Fried Chicken"));
+    body.appendChild(createMenuItem(chicken3, "Even More Fried Chicken"));
+    body.appendChild(createMenuItem(chicken4, "Can't Stop the Fried Chicken"));
+    body.appendChild(createMenuItem(blueMeth,"Secret Menu"));
+    body.appendChild(createMenuItem(tuco, "TIGHT TIGHT TIGHT"));
 
     insertBody(body);
 }
@@ -18,7 +27,7 @@ function createMenuItem(name, description){
     menuImageContainer.className = "menuImageContainer";
  
     let image = document.createElement('img');
-    image.src = `imgs/${name}.png`;
+    image.src = name;
     image.className = "menuImages";
  
     let overlay = document.createElement('div');

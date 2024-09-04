@@ -1,3 +1,5 @@
+import gus from "./imgs/gus.png";
+
 function contactBody(){
     
     //create body
@@ -10,7 +12,7 @@ function contactBody(){
     body.appendChild(contactImageContainer);
 
     let bodyContentImage = document.createElement('img');
-    bodyContentImage.src = "imgs/gus.png";
+    bodyContentImage.src = gus;
     bodyContentImage.className = 'frontImage';
     contactImageContainer.appendChild(bodyContentImage);
 

@@ -1,3 +1,6 @@
+import chickenBros from "./imgs/chickenBros.png";
+import frontImage from "./imgs/frontstore.png";
+
 function homeLoad(){
     let content = document.querySelector('#content');    
     content.appendChild(createHeader());
@@ -10,7 +13,7 @@ function createHeader(){
     head.id = 'head';
 
     let mainImage = document.createElement('img');
-    mainImage.src = "imgs/chickenBros.png"
+    mainImage.src = chickenBros;
     head.appendChild(mainImage);
     
     head.appendChild(createButton("homeButton", "Home", "red"));
@@ -38,7 +41,7 @@ function createBody(){
     body.appendChild(imageContainer);
 
     let bodyContentImage = document.createElement('img');
-    bodyContentImage.src = "imgs/frontstore.png";
+    bodyContentImage.src = frontImage;
     bodyContentImage.className = 'frontImage';
     imageContainer.appendChild(bodyContentImage);
 

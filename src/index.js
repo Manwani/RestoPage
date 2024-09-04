@@ -1,3 +1,4 @@
+import "./styles.css";
 import {homeLoad, homeBody} from './homeContent';
 import menuBody from './menuContent';
 import contactBody from './contactContent';
